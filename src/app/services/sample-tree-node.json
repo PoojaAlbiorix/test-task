@@ -1,0 +1,17 @@
+{
+    "data": [
+        {
+            "type": "folder",
+            "id": "1",
+            "name":"test",
+            "children": [
+                {
+                    "type": "file",
+                    "id": "2",
+                    "children": [],
+                    "name": "test"
+                }
+            ]
+        }
+    ]
+}

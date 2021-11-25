@@ -1,0 +1,15 @@
+<ul class="tree-view">
+    <li class="system-main" 
+       *ngFor="let item of treeViewData">
+      <div class="system-main__apps">
+          <img src="assets/images/tree-folder/{{item?.type==='file' ? 'file-regular.svg' : 'folder-open-regular.svg'}}" alt=""/>
+          <span class="system-main__name" > {{ item?.name }} </span>
+          <button *ngIf="item?.type==='folder'" class="addFolderAction" type="button" (click)="actions(item,'add')">Add</button>
+          <button *ngIf="item?.type==='folder' || item?.type==='file'" class="addFolderAction" type="button" (click)="actions(item,'delete')">delete</button>
+      </div>
+      <ul *ngIf="item?.children">
+        <app-tree-folder [treeFolderDirectory]="item?.children"></app-tree-folder>
+      </ul>
+    </li>
+  </ul>
+

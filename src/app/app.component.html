@@ -1,0 +1,22 @@
+<div class="header">
+  <h1>FOLDER STRUCTURE MAKER</h1>
+</div>
+<div>
+  <button class="addFolderAction" type="button" (click)="showFormToAddFolderOrFiles()">Add folder to root</button>
+  <div class="treeViewStructure">
+    <app-tree-folder [treeFolderDirectory]="treeFolderDirectoryData"></app-tree-folder>
+  </div>
+  <div *ngIf="showForm">
+    <form [formGroup]="folderDirectory">
+      <div>
+        <select formControlName="filetype" *ngIf="existingDataNode">
+          <option value="folder">folder</option>
+          <option value="file">file</option>
+        </select>
+        <input type="text" name="filename" formControlName="filename">
+        <button (click)="addDirectory()">save</button>
+        <button (click)="hideAndResetForm()">close</button>
+      </div>
+    </form>
+  </div>
+</div>
